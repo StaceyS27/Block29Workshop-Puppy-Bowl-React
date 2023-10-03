@@ -11,7 +11,7 @@ function App() {
   return (
     <>
     <div className="navbar">
-      <Link to={"/"}>List of Players</Link>
+      <Link to={"/players"}>List of Players</Link>
       <Link to={"/players/:id"}>Single Player Info</Link>
     </div> 
 
@@ -21,7 +21,7 @@ function App() {
 
     <div className="mainSection">
       <Routes>
-        <Route path='/' element={<AllPlayers />}/>
+        <Route path='/players' element={<AllPlayers />}/>
         <Route path='/players/:id' element={<SinglePlayer/>} />
     </Routes>
     </div>
