@@ -32,10 +32,9 @@ export default function SinglePlayer() {
             {individualPlayer ? (
                 <div>
                     <h3>Name: {individualPlayer.name}</h3>
+                    <img src={individualPlayer.imageUrl} alt={individualPlayer.name} />
                     <p>Breed: {individualPlayer.breed}</p>
                     <p>Status: {individualPlayer.status}</p>
-                    <img src={individualPlayer.imageUrl} alt={individualPlayer.name} />
-
 
 
                 </div>) : <p>loading...</p>}
