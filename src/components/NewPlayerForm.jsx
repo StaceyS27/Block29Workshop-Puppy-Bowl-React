@@ -8,8 +8,6 @@ export default function NewPlayerForm() {
     const [puppyBreed, setPuppyBreed] = useState("");
     const [error, setError] = useState("");
 
-    const navigate = useNavigate();
-
     function resetForm() {
         setError("");
         setPuppyName("");
@@ -65,7 +63,7 @@ export default function NewPlayerForm() {
                     Status: {" "}
                     <input value={puppyStatus} onChange={(e) => setPuppyStatus(e.target.event)} />
                 </label>
-                <button disabled={error} type="submit">Submit</button>
+                <button disabled={error} type="submit" onClick={()=>navigate("/players")}>Submit</button>
                 <button type="reset" onClick={resetForm}>Reset</button>
             </form>
         </div>

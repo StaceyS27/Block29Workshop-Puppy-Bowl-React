@@ -8,6 +8,19 @@ export default function SinglePlayer() {
 
     const playerId = params.id
 
+    async function handleDelete() {
+        try{
+            const response = await fetch("https://fsa-puppy-bowl.herokuapp.com/api/2306-GHP-ET-WEB-PT-SF/players/" + playerId,
+            {
+                method: "DELETE",
+            })
+            const result = await response.json();
+            console.log(result);
+        }catch(e){
+            console.error(e);
+        }
+    }
+
     useEffect(() => {
         async function fetchSinglePlayer() {
             try {
@@ -27,6 +40,8 @@ export default function SinglePlayer() {
         fetchSinglePlayer();
     }, []
     )
+
+   
     return (
         <>
             {individualPlayer ? (
@@ -38,6 +53,11 @@ export default function SinglePlayer() {
 
 
                 </div>) : <p>loading...</p>}
+            
+            {individualPlayer ? (
+            <button onClick={()=>{handleDelete()}}>Delete Player</button> 
+            ) : <p>can't delete</p>
+}
         </>
     )
 }
