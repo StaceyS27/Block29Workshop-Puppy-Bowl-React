@@ -50,14 +50,11 @@ export default function SinglePlayer() {
                     <img src={individualPlayer.imageUrl} alt={individualPlayer.name} />
                     <p>Breed: {individualPlayer.breed}</p>
                     <p>Status: {individualPlayer.status}</p>
-
+                    
+                    <button onClick={()=>{handleDelete()}}>Delete Player</button> 
 
                 </div>) : <p>loading...</p>}
             
-            {individualPlayer ? (
-            <button onClick={()=>{handleDelete()}}>Delete Player</button> 
-            ) : <p>can't delete</p>
-}
         </>
     )
 }
