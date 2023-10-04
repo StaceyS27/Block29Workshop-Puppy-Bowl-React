@@ -1,8 +1,11 @@
-import {react, useEffect, useState} from "react"
+import {react, useEffect, useState} from "react";
+import {useNavigate} from 'react-router-dom';
+import SinglePlayer from "./SinglePlayer";
 
 
 export default function AllPlayers () {
     const [playerList, setPlayerList] = useState(null);
+    const navigate = useNavigate();
 
     useEffect(() => {
         const fetchAllPlayers = async () => {
@@ -25,11 +28,14 @@ export default function AllPlayers () {
        <div>
         {playerList && playerList.map(function(puppy) {
             return (
+                <>
           <div key={puppy.id}>
-           <h3> {puppy.name} </h3>;
+           <h3> Name: {puppy.name} </h3>;
             <img src={puppy.imageUrl} alt={puppy.name} />  
-            </div>  
-            )
+            
+            <button onClick={()=>{navigate(`/players/${puppy.id}`)}}>More Info!</button>
+            </div>
+            </>)
        }) }
         </div>
      )

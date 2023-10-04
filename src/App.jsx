@@ -2,7 +2,7 @@ import { useState } from 'react'
 import AllPlayers from './components/AllPlayers'
 import NewPlayerForm from './components/NewPlayerForm'
 import SinglePlayer from './components/SinglePlayer'
-import {Link, Routes, Route} from 'React-router-dom'
+import {Link, Routes, Route} from 'react-router-dom'
 
 import './App.css'
 
@@ -12,7 +12,6 @@ function App() {
     <>
     <div className="navbar">
       <Link to={"/players"}>List of Players</Link>
-      <Link to={"/players/:id"}>Single Player Info</Link>
     </div> 
 
     <div className="playerForm">
