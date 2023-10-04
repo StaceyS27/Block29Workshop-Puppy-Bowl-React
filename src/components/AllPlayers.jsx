@@ -32,8 +32,9 @@ export default function AllPlayers() {
                         <div key={puppy.id}>
                             <h3> Name: {puppy.name} </h3>;
                             <img src={puppy.imageUrl} alt={puppy.name} />
-
+                            <div>
                             <button onClick={() => { navigate(`/players/${puppy.id}`) }}>More Info!</button>
+                            </div>
                         </div>
                     </>)
             })}
